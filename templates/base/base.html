@@ -4,29 +4,18 @@
 										estrutura que a linha 15 do index.html'-->
 <head>
 	<meta charset="UTF-8"/>
-	<title>{% block title %} {{ title }} {% endblock %}</title>	<!--Código de referência abaixo podem copiar para os outros html, por ser padrão-->
+	<title>{% block title %} {{ title }} {% endblock %}</title>	<!--Código de referência abaixo podem copiar para os outros html, por ser padrão
 	<link rel = 'stylesheet' 					
-                type = 'text/css' href = "{{url_for("static", filename = "estilogeral.css")}}" media = 'screen'> 
+                type = 'text/css' href = "{{url_for("static", filename = "estilogeral.css")}}" media = 'screen'> -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" 
 	integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+	<script> src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js" </script>
+	<script>{% block script %} {% endblock %}</script> 
 	
 </head>
 <body>
-	<div class="navbar navbar-expand navbar-dark flex-column flex-md-row bd-navbar bg-orange" role="navigation">
-		<div id = 'logo'>
-			<a href='/'> <img src = "static/img/logo_faculdade.png" class="logo"/></a>
-		</div>
-		<div id = 'menu'>
-			<ul>				
-				<li><a href="/">Home</a></li>
-				<li><a href="cursos">Cursos</a></li>
-				<li><a href="detalhes">Detalhes</a></li>
-				<li><a href="disciplinas">Disciplinas</a></li>
-				<li><a href="noticias">Noticias</a></li>
-			</ul>
-		</div>
-	</div>
+	
 
     {% block content %}
     

@@ -1,31 +1,22 @@
 {% extends 'base/base.html' %}
 
+{% block script %}
 
-{% block content %}
-    <p>{{ nome }}</p>
-    <p>{{ sobrenome }}</p>
-    <p>{{ idade }}</p>
+{% endblock %}
 
-  
 		
-
+{% block content%}
     {% from '_macro.html' import render_campo %}    
         <divclass = 'container-fluid'>       
-                <form name = 'SentMessage' id = 'formaContato' method = 'POST'>
-                    
+                <form name = 'SentMessage' id = 'formId' method = 'POST'> 
+                <div class = 'form-control'>      
                         <div>
-                            {{ render_campo(form.nome, class = 'form-control') }}
+                            {{ render_campo(form.user, class = 'form-control') }}
                         </div>                                    
                         <div>
-                            {{ render_campo(form.idade, class = 'form-control') }}
+                            {{ render_campo(form.password, class = 'form-control') }}
                         </div>
-                       
-                    <div>
-                        {{ render_campo(form.email, class = 'form-control') }}
-                    </div>      
-                    <div>
-                        {{ render_campo(form.comentario, class = 'form-control') }}
-                    </div>  
+                </div>
                     <div class="button">
     	    	        <button type="submit" class = 'btn btn-default'>Enviar sua mensagem</button>
     	            </div>

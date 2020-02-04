@@ -4,7 +4,7 @@ from wtforms.fields.html5 import EmailField
 from wtforms import IntegerField
 
 class Comentario(Form):
-    nome = StringField("Escreva seu nome:")
-    email = EmailField("Escreva seu E-mail:")
-    idade = IntegerField("Qual sua idade?")
-    comentario = TextField("Comentário")
+    user = EmailField("Escreva seu E-mail:")
+    password = StringField("Escreva sua senha:")
+    #idade = IntegerField("Qual sua idade?")
+    #comentario = TextField("Comentário")
