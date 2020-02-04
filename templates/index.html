@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+    <script>
+        var myHeaders = new Headers();
+		myHeaders.append("XToken", "1234567890");
+		myHeaders.append("Authorization", "Basic ZmFiaW8uZGVzazphYmMxMjM=");
+		myHeaders.append("Origin", "http://192.168.15.133:5000/");
+		
+		var raw = JSON.stringify({"user":"fabio.florenco@dfssistemas.com.br","password":"102030"});
+		
+		var requestOptions = {
+		method: 'POST',
+		headers: myHeaders,
+		body: raw,
+		mode: 'cors',
+		redirect: 'follow'
+		};
+		
+		fetch("http://192.168.15.251:8866/rest/appticketdfs/v1/user", requestOptions)
+		.then(response => response.text())
+		.then(result => console.log(result))
+	  	.catch(error => console.log('error', error));
+    </script>
+
+</head>
+
+<body>
+    <form id="formId">
+        <table>           
+            <tr> 
+                <td>E-mail do usuário:</td>
+                <td><input type="text" size=100 name="user" id="user" value=""/></td>
+            </tr>
+            <tr> 
+                <td>Senha:</td>
+                <td><input type="text" size=100 name="password" id="password" value=""/></td>
+            </tr>
+			
+            <tr><td><input type="submit" value="Submit" /></td></tr>
+        </table>
+    </form>
+
+</body>
+
+
+
+</html>
