@@ -1,0 +1,61 @@
+{% extends 'base/base.html' %}
+
+{% block script %}
+
+{% endblock %}
+
+		
+{% block content%}
+    {% from '_macro.html' import render_campo %}    
+        <divclass = 'container-fluid'>       
+                <form name = 'SentMessage' id = 'formId' method = 'POST'> 
+                <div class = 'form-control'>      
+                        <div>
+                            {{ render_campo(form.cPriority, class = 'form-control') }}                  
+                        </div>                                    
+                        <div>
+                            {{ render_campo(form.cIdUser, class = 'form-control') }}
+                        </div>
+                        <div>
+                            {{ render_campo(form.ctitle, class = 'form-control') }}
+                        </div>                                    
+                        <div>
+                            {{ render_campo(form.cidCategory, class = 'form-control') }}
+                        </div>
+                        <div>
+                            {{ render_campo(form.cidPlataform, class = 'form-control') }}
+                        </div>                                    
+                        <div>
+                            {{ render_campo(form.cidSubject, class = 'form-control') }}
+                        </div>
+                        <div>
+                            {{ render_campo(form.cidProcess, class = 'form-control') }}
+                        </div>                                    
+                        <div>
+                            {{ render_campo(form.cidUsrObs, class = 'form-control') }}
+                        </div>
+                        <div>
+                            {{ render_campo(form.ctag, class = 'form-control') }}
+                        </div>                                    
+                        <div>
+                            {{ render_campo(form.cmsg, class = 'form-control') }}
+                        </div>
+                        <div>
+                            {{ render_campo(form.cidEntity, class = 'form-control') }}
+                        </div>                                    
+                        <div>
+                            {{ render_campo(form.cidGroup, class = 'form-control') }}
+                        </div>
+                        <div>
+                            {{ render_campo(form.cidSubGroup, class = 'form-control') }}
+                        </div>                                    
+                </div>
+                    <div class="button">
+    	    	        <button type="submit" class = 'btn btn-default'>Abrir Chamado</button>
+    	            </div>
+                </form>
+        </div>    
+{% endblock %}
+
+</body>
+</html>
