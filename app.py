@@ -60,7 +60,7 @@ api_token = str(api_token)
 api_token = api_token.replace(api_token[:api_token.index('b')+1],"") 
 api_token = api_token.replace('b','')
 api_token = api_token.replace("'","")
-api_url = 'http://192.168.15.251:8866/rest/appticketdfs/v1/'
+api_url = 'http://179.104.42.133:8866/rest/appticketdfs/v1/'
 @app.route('/param2', methods = ['GET', 'POST'])#para validar um tipo de valor, como inteiro, coloque o tipo seguido por :
 def param2(t=''):
     title = 'Login'
@@ -93,8 +93,8 @@ def param2(t=''):
         dToken = post_account.POST_userLogin(api_url,headers,json)
         
         #print(json)
-    print('tem que aparecer duas vezes')
-    print(dToken)
+    #print('tem que aparecer duas vezes')
+    #print(dToken)
     if dToken != {}:
         if dToken["token"] != "" and dToken["authenticated"] == True:
             title = "Abrir Chamado"
@@ -113,7 +113,7 @@ def param2(t=''):
             cidEntity       =   cChamado.cidEntity.data
             cidGroup        =   cChamado.cidGroup.data
             cidSubGroup     =   cChamado.cidSubGroup.data
-            print('teste', cmsg)
+            #print('teste', cmsg)
             if cmsg != "":
                 jCham           ={"priority":"{0}".format(cPriority),  
                                   "IdUser":"{0}".format(cIdUser),
@@ -154,7 +154,7 @@ def param2(t=''):
     # render_template('python_tags.html', nome=nome, sobrenome=sobrenome, idade=idade, lista=litswx, form=comentario)
 
 
-app.run(debug=True) # Executa o servidor por padrão na porta 5000
+app.run(debug=True, host= '192.168.15.212', port=4512) # Executa o servidor por padrão na porta 5000
 
 #app.run(debug = false | true, port = <informa porta personalizada>)
 

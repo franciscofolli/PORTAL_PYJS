@@ -1,3 +1,5 @@
 {
-    "python.pythonPath": "C:\\Users\\franc\\AppData\\Local\\Programs\\Python\\Python36\\python.exe"
+    "python.pythonPath": "C:\\Users\\franc\\AppData\\Local\\Programs\\Python\\Python36\\python.exe",
+    "totvsLanguageServer.welcomePage": false,
+    "totvsLanguageServer.askEncodingChange": true
 }

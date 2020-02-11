@@ -4,10 +4,11 @@ from wtforms.fields.html5 import EmailField
 from wtforms import IntegerField
 from wtforms import SelectField
 from wtforms import TextAreaField
+from wtforms import PasswordField
 
 class Comentario(Form):
     user = EmailField("Escreva seu E-mail:")
-    password = StringField("Escreva sua senha:")
+    password = PasswordField("Escreva sua senha:")
     #idade = IntegerField("Qual sua idade?")
     #comentario = TextField("Comentário")
 
