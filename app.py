@@ -60,7 +60,7 @@ api_token = str(api_token)
 api_token = api_token.replace(api_token[:api_token.index('b')+1],"") 
 api_token = api_token.replace('b','')
 api_token = api_token.replace("'","")
-api_url = 'http://179.104.42.133:8866/rest/appticketdfs/v1/'
+api_url = 'http://192.168.15.251:8866/rest/appticketdfs/v1/'
 @app.route('/param2', methods = ['GET', 'POST'])#para validar um tipo de valor, como inteiro, coloque o tipo seguido por :
 def param2(t=''):
     title = 'Login'
@@ -95,8 +95,13 @@ def param2(t=''):
         #print(json)
     #print('tem que aparecer duas vezes')
     #print(dToken)
-    if dToken != {}:
-        if dToken["token"] != "" and dToken["authenticated"] == True:
+    #if dToken != {}:
+        
+    return render_template('Login.html', form=comentario, title = title)
+    # render_template('python_tags.html', nome=nome, sobrenome=sobrenome, idade=idade, lista=litswx, form=comentario)
+@app.route('/serviced', methods = ['GET','POST'])
+def serviced():
+    if dToken["token"] != "" and dToken["authenticated"] == True:
             title = "Abrir Chamado"
             cChamado        =   form.CriarChamado(request.form)
             print(cChamado)
@@ -149,12 +154,8 @@ def param2(t=''):
                     print(jAbertura)
                 else:
                     print("Campos permanecem vazios")
-            return render_template('Page_ini.html', form=cChamado, title = title)
-    return render_template('python_tags.html', form=comentario, title = title)
-    # render_template('python_tags.html', nome=nome, sobrenome=sobrenome, idade=idade, lista=litswx, form=comentario)
-
-
-app.run(debug=True, host= '192.168.15.212', port=4512) # Executa o servidor por padrão na porta 5000
+            return render_template('serviced.html', form=cChamado, title = title)
+app.run(debug=True, host= '192.168.15.133', port=4512) # Executa o servidor por padrão na porta 5000
 
 #app.run(debug = false | true, port = <informa porta personalizada>)
 
