@@ -60,7 +60,7 @@ api_token = str(api_token)
 api_token = api_token.replace(api_token[:api_token.index('b')+1],"") 
 api_token = api_token.replace('b','')
 api_token = api_token.replace("'","")
-api_url = 'http://192.168.15.251:8866/rest/appticketdfs/v1/'
+api_url = 'https://187.62.221.86:8866/rest/appticketdfs/v1/'
 @app.route('/param2', methods = ['GET', 'POST'])#para validar um tipo de valor, como inteiro, coloque o tipo seguido por :
 def param2(t=''):
     title = 'Login'
@@ -99,6 +99,11 @@ def param2(t=''):
         
     return render_template('Login.html', form=comentario, title = title)
     # render_template('python_tags.html', nome=nome, sobrenome=sobrenome, idade=idade, lista=litswx, form=comentario)
+
+@app.route('/resumod', methods = ['GET','POST'])
+def resumod():
+    return render_template('resum.html')
+
 @app.route('/serviced', methods = ['GET','POST'])
 def serviced():
     if dToken["token"] != "" and dToken["authenticated"] == True:
